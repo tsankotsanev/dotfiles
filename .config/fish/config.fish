@@ -19,9 +19,11 @@ alias night "redshift -P -O 3400"
 
 # System
 alias update="sudo pacman -Syyu --noconfirm"
-alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
-# Quicker navigation
+# Git
+alias config="/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
+
+# Quick navigation
 alias nb="$EDITOR ~/.bashrc"
 alias nf="$EDITOR ~/.config/fish/config.fish"
 
