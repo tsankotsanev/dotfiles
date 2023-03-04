@@ -6,26 +6,35 @@ set -gx EDITOR nvim
 
 ### Aliases ###
 
+alias vim nvim
+
 # List
 alias ls "exa --icons"
 alias la "ls -a"
 alias ll "exa -lh --icons"
 alias lla "ll -a"
-alias l.="exa -a| grep -E '^\.'"
+alias l. "exa -a | grep -E '^\.'"
+alias lt "ls --tree --level=2 --long --git"
 
 # Night light
 alias day "redshift -P -O 5600"
 alias night "redshift -P -O 3400"
 
 # System
-alias update="sudo pacman -Syyu --noconfirm"
+alias update "sudo pacman -Syyu --noconfirm"
 
 # Git
-alias config="/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
+alias config "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 
 # Quick navigation
-alias nb="$EDITOR ~/.bashrc"
-alias nf="$EDITOR ~/.config/fish/config.fish"
+alias valacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
+alias vqtile "$EDITOR ~/.config/qtile/config.py"
+alias vbash "$EDITOR ~/.bashrc"
+alias vfish "$EDITOR ~/.config/fish/config.fish"
+
+# Scripts
+# usage: rescrape <spider_name> <num_runs>
+alias rescrape "~/Scripts/rescrape.sh"
 
 ### Functions ###
 
