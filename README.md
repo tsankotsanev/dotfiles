@@ -25,6 +25,6 @@ config remote set-url origin git@github.com:tsankotsanev/dotfiles.git
 cd ~ 
 config status
 config add .config/fish/config.fish
-config commit -m "Add fish config"
+config commit -m "Add config.fish"
 config push
 ```
