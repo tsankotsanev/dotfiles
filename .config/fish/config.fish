@@ -1,12 +1,17 @@
+# Source config_private if exists
+set -x config_private_path ~/.config/fish/functions/config_private.fish
+
+if test -r $config_private_path -a -f $config_private_path
+    source $config_private_path
+end
+
 ### Set ###
 
-set fish_greeting ""
+set fish_greeting
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
 
 ### Aliases ###
-
-alias vim nvim
 
 # List
 alias ls "exa --icons"
@@ -24,23 +29,33 @@ alias night "redshift -P -O 3400"
 alias update "sudo pacman -Syyu --noconfirm"
 
 # Git
-alias config "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
+alias g git
+alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 
 # Quick navigation
-alias valacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
-alias vqtile "$EDITOR ~/.config/qtile/config.py"
-alias vbash "$EDITOR ~/.bashrc"
-alias vfish "$EDITOR ~/.config/fish/config.fish"
-
-# Scripts
-# usage: rescrape <spider_name> <num_runs>
-alias rescrape "~/Scripts/rescrape.sh"
+alias nalacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
+alias nqtile "$EDITOR ~/.config/qtile/config.py"
+alias nautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
+alias npicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
+alias nbash "$EDITOR ~/.bashrc"
+alias nfish "$EDITOR ~/.config/fish/config.fish"
+alias nbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
 
 ### Functions ###
 
+# Make a directory and cd into it
+function mkdircd
+    mkdir -p $argv
+    cd $argv[-1]
+end
+
+function cx
+  cd $argv[-1]
+  ll
+end
+
 # Extractor for all kinds of archives
 # usage: ex <file>
-
 function ex
   if test -f $argv[1]
     switch (basename $argv[1])
