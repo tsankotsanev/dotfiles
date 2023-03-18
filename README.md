@@ -3,8 +3,8 @@
 ## Setup
 ```sh
 git init --bare $HOME/.myconf
-alias config='git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
-config remote add origin git@github.com:tsankotsanev/dotfiles.git
+alias conf='git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+conf remote add origin git@github.com:tsankotsanev/dotfiles.git
 ```
 
 ## Replication
@@ -16,15 +16,15 @@ rm --recursive myconf-tmp
 
 ## Configuration
 ```sh
-config config status.showUntrackedFiles no
-config remote set-url origin git@github.com:tsankotsanev/dotfiles.git
+conf config status.showUntrackedFiles no
+conf remote set-url origin git@github.com:tsankotsanev/dotfiles.git
 ```
 
 ## Usage
 ```sh
 cd ~ 
-config status
-config add .config/fish/config.fish
-config commit -m "Add config.fish"
-config push
+conf status
+conf add .config/fish/config.fish
+conf commit -m "Add config.fish"
+conf push
 ```
