@@ -227,7 +227,8 @@ def init_colors():
 
 colors = init_colors()
 colors[8] = colors[2]
-colors[6] = ["#5e81ac", "#5e81ac"]
+# colors[6] = ["#5e81ac", "#5e81ac"]
+colors[6] = ["#ebbcba", "#ebbcba"]
 
 # WIDGETS FOR THE BAR
 
@@ -241,7 +242,7 @@ widget_defaults = init_widgets_defaults()
 
 icon_font = "FontAwesome"
 icon_size = 16
-text_font = "Ubuntu Bold"
+text_font = "Ubuntu Italic Bold"
 text_size = 14
 
 def init_widgets_list():

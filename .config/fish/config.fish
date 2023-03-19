@@ -13,13 +13,24 @@ set -gx EDITOR nvim
 
 ### Aliases ###
 
-# List
+# Shorten frequently used commands
+alias nv nvim
+alias g git
+
+# Change ls to exa
 alias ls "exa --icons"
 alias la "ls -a"
 alias ll "exa -lh --icons"
 alias lla "ll -a"
 alias l. "exa -a | grep -E '^\.'"
 alias lt "ls --tree --level=2 --long --git"
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
 
 # Night light
 alias day "redshift -P -O 5600"
@@ -28,11 +39,10 @@ alias night "redshift -P -O 3400"
 # System
 alias update "sudo pacman -Syyu --noconfirm"
 
-# Git
-alias g git
+# Bare git repo alias for dotfiles
 alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 
-# Quick navigation
+# Most opened files
 alias nalacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
 alias nqtile "$EDITOR ~/.config/qtile/config.py"
 alias nautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
@@ -40,6 +50,12 @@ alias npicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
 alias nbash "$EDITOR ~/.bashrc"
 alias nfish "$EDITOR ~/.config/fish/config.fish"
 alias nbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
+alias nvimrc "$EDITOR ~/.config/nvim/after/plugin/defaults.lua"
+
+# Confirm before overwriting something
+alias cp "cp -i"
+alias mv "mv -i"
+alias rm "rm -i"
 
 ### Functions ###
 
