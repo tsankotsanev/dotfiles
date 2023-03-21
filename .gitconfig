@@ -1,3 +1,19 @@
+[alias]
+    st = status
+    a = "!git status --short | awk '{print $2}' | fzf | xargs git add"
+    d = diff
+    ci = commit
+    ca = commit -a
+    co = checkout
+    ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+    pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+    l = log --pretty=format:'%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%Creset' --graph --date=relative --decorate --all
+    br = branch
+    ba = branch -a
+    bm = branch --merged
+    bn = branch --no-merged
+    open = "!hub browse"
+
 [http]
     sslbackend = openssl
     sslVerify = true
@@ -41,23 +57,6 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
-
-[alias]
-    st = status
-    a = "!git status --short | awk '{print $2}' | fzf | xargs git add"
-    d = diff
-    ci = commit
-    ca = commit -a
-    co = checkout
-    ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
-    pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
-    l = log --pretty=format:'%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%Creset' --graph --date=relative --decorate --all
-    df = "!f() { git l | fzf | awk '{print $2}' | xargs sh -c 'git diff $1^ $1' sh ; }; f"
-    br = branch
-    ba = branch -a
-    bm = branch --merged
-    bn = branch --no-merged
-    open = "!hub browse"
 
 [diff]
     tool = nvimdiff

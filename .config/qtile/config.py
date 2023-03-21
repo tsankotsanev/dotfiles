@@ -341,6 +341,7 @@ def init_widgets_list():
                         ), 
                 widget.Memory(
                         font = text_font,
+                        # I hardcoded this cause it looks awful otherwise...
                         format = "{MemUsed: .0f}{mm}/15921{mm}",
                         foreground = colors[6],
                         background = colors[1],
