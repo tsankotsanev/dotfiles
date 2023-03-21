@@ -18,10 +18,8 @@ alias nv nvim
 alias g git
 
 # Change ls to exa
-alias ls "exa --icons"
-alias la "ls -a"
-alias ll "exa -lh --icons"
-alias lla "ll -a"
+alias ls "exa -lh --icons"
+alias la "ll -a"
 alias l. "exa -a | grep -E '^\.'"
 alias lt "ls --tree --level=2 --long --git"
 
@@ -67,7 +65,7 @@ end
 
 function cx
   cd $argv[-1]
-  ll
+  ls
 end
 
 # Extractor for all kinds of archives
@@ -110,5 +108,3 @@ function ex
     echo "'$argv[1]' is not a valid file"
   end
 end
-
-
