@@ -1,3 +1,9 @@
+# Cache and backup
 __pycache__
 *.bak
 *.tmp.*
+
+# Private
+config_work.fish
+config_private.fish
+.git-credentials

@@ -1,6 +1,6 @@
 [alias]
     st = status
-    a = "!git status --short | awk '{print $2}' | fzf | xargs git add"
+    a = "!git status --short | grep '^.[^ ]' | grep -v '^A' | awk '{print $2}' | fzf --multi --preview 'git diff --color=always {}' --bind K:preview-up,J:preview-down | xargs git add"
     d = diff
     ci = commit
     ca = commit -a
@@ -18,12 +18,11 @@
     sslbackend = openssl
     sslVerify = true
 
+[core]
+    editor = nvim
+
 [credential]
     helper = store
-
-[core]
-    pager = delta
-    excludesfile = /home/whitez/.gitignore_global
 
 [color]
     status = auto
@@ -32,36 +31,3 @@
     interactive = auto
     grep = auto
     ui = auto
-
-[merge]
-    conflictstyle = diff3
-
-[core]
-    pager = delta
-    editor = nvim
-
-[interactive]
-    diffFilter = delta --color-only --features=interactive
-
-[delta]
-    features = collared-trogon
-    navigate = true
-
-[delta "interactive"]
-    keep-plus-minus-markers = false
-
-[delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
-    hunk-header-style = file line-number syntax
-
-[diff]
-    tool = nvimdiff
-
-[difftool "nvimdiff"]
-    cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
-    path = 

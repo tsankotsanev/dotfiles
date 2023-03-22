@@ -1,8 +1,10 @@
-# Source config_private if exists
-set -x config_private_path ~/.config/fish/functions/config_private.fish
+# Source private configs
+if [ -e ~/.config/fish/config_work.fish ]
+    and source ~/.config/fish/config_work.fish
+end
 
-if test -r $config_private_path -a -f $config_private_path
-    source $config_private_path
+if [ -e ~/.config/fish/config_private.fish ]
+    and source ~/.config/fish/config_private.fish
 end
 
 ### Set ###
@@ -13,7 +15,7 @@ set -gx EDITOR nvim
 
 ### Aliases ###
 
-# Shorten frequently used commands
+# Frequently used commands
 alias nv nvim
 alias g git
 
@@ -40,14 +42,17 @@ alias update "sudo pacman -Syyu --noconfirm"
 # Bare git repo alias for dotfiles
 alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 
+# Tasks killer
+alias tasks "ps aux | fzf | awk '{print $2}' | xargs kill"
+
 # Most opened files
-alias nalacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
-alias nqtile "$EDITOR ~/.config/qtile/config.py"
-alias nautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
-alias npicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
-alias nbash "$EDITOR ~/.bashrc"
-alias nfish "$EDITOR ~/.config/fish/config.fish"
-alias nbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
+alias nvalacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
+alias nvqtile "$EDITOR ~/.config/qtile/config.py"
+alias nvautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
+alias nvpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
+alias nvbash "$EDITOR ~/.bashrc"
+alias nvfish "$EDITOR ~/.config/fish/config.fish"
+alias nvbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
 alias nvimrc "$EDITOR ~/.config/nvim/after/plugin/defaults.lua"
 
 # Confirm before overwriting something
@@ -63,6 +68,7 @@ function mkdircd
     cd $argv[-1]
 end
 
+# Change to directory and list the files
 function cx
   cd $argv[-1]
   ls
