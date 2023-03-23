@@ -494,7 +494,6 @@ ctrl + alt + o
 ##################################
 ## The RESIZE KEYS ARE RESERVED ##
 ##  ~/.config/qtile/config.py   ##
-##      Lines 191 - 235         ##
 ##################################
 ## RESIZE UP, DOWN, LEFT, RIGHT ##
 #super + control + l
