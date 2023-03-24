@@ -55,11 +55,6 @@ alias nvfish "$EDITOR ~/.config/fish/config.fish"
 alias nvbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
 alias nvimrc "$EDITOR ~/.config/nvim/after/plugin/defaults.lua"
 
-# Confirm before overwriting something
-alias cp "cp -i"
-alias mv "mv -i"
-alias rm "rm -i"
-
 ### Functions ###
 
 # Make a directory and cd into it
