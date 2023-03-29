@@ -42,9 +42,6 @@ alias update "sudo pacman -Syyu --noconfirm"
 # Bare git repo alias for dotfiles
 alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 
-# Tasks killer
-alias tasks "ps aux | fzf | awk '{print $2}' | xargs kill"
-
 # Most opened files
 alias nvalacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
 alias nvqtile "$EDITOR ~/.config/qtile/config.py"
