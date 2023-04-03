@@ -60,7 +60,7 @@ function mkdircd
     cd $argv[-1]
 end
 
-# Change to directory and list the files if there's any
+# Change to directory and list the files if there are any
 function cx
   cd $argv[-1]
   ls
