@@ -1,4 +1,5 @@
 # Source private configs if exists
+
 if [ -e ~/.config/fish/config_work.fish ]
     and source ~/.config/fish/config_work.fish
 end
