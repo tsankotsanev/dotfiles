@@ -203,7 +203,7 @@ layouts = [
     #layout.MonadWide(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
     layout.MonadWide(**layout_theme),
     layout.Matrix(**layout_theme),
-    layout.Bsp(**layout_theme),
+    layout.Bsp(margin=0, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
     layout.Floating(**layout_theme),
     layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme)
