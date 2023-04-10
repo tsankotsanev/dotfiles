@@ -17,6 +17,7 @@
 
 [core]
     editor = nvim
+    excludesfile = /home/whitez/.gitignore
 
 [credential]
     helper = store
