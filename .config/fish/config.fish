@@ -51,7 +51,7 @@ alias nvpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
 alias nvbash "$EDITOR ~/.bashrc"
 alias nvfish "$EDITOR ~/.config/fish/config.fish"
 alias nvbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
-alias nvimrc "$EDITOR ~/.config/nvim/after/plugin/defaults.lua"
+alias nvstarship "$EDITOR ~/.config/starship.toml"
 
 ### Functions ###
 
@@ -63,47 +63,50 @@ end
 
 # Change to directory and list the files if there are any
 function cx
-  cd $argv[-1]
-  ls
+    cd $argv[-1]
+    ls
 end
 
 # Extractor for all kinds of archives
 # usage: ex <file>
 function ex
-  if test -f $argv[1]
-    switch (basename $argv[1])
-      case '*.tar.bz2'
-        tar xjf $argv[1]
-      case '*.tar.gz'
-        tar xzf $argv[1]
-      case '*.bz2'
-        bunzip2 $argv[1]
-      case '*.rar'
-        unrar x $argv[1]
-      case '*.gz'
-        gunzip $argv[1]
-      case '*.tar'
-        tar xf $argv[1]
-      case '*.tbz2'
-        tar xjf $argv[1]
-      case '*.tgz'
-        tar xzf $argv[1]
-      case '*.zip'
-        unzip $argv[1]
-      case '*.Z'
-        uncompress $argv[1]
-      case '*.7z'
-        7z x $argv[1]
-      case '*.deb'
-        ar x $argv[1]
-      case '*.tar.xz'
-        tar xf $argv[1]
-      case '*.tar.zst'
-        tar xf $argv[1]
-      case '*'
-        echo "'$argv[1]' cannot be extracted via ex()"
+    if test -f $argv[1]
+        switch (basename $argv[1])
+            case '*.tar.bz2'
+                tar xjf $argv[1]
+            case '*.tar.gz'
+                tar xzf $argv[1]
+            case '*.bz2'
+                bunzip2 $argv[1]
+            case '*.rar'
+                unrar x $argv[1]
+            case '*.gz'
+                gunzip $argv[1]
+            case '*.tar'
+                tar xf $argv[1]
+            case '*.tbz2'
+                tar xjf $argv[1]
+            case '*.tgz'
+                tar xzf $argv[1]
+            case '*.zip'
+                unzip $argv[1]
+            case '*.Z'
+                uncompress $argv[1]
+            case '*.7z'
+                7z x $argv[1]
+            case '*.deb'
+                ar x $argv[1]
+            case '*.tar.xz'
+                tar xf $argv[1]
+            case '*.tar.zst'
+                tar xf $argv[1]
+            case '*'
+                echo "'$argv[1]' cannot be extracted via ex()"
+        end
+    else
+        echo "'$argv[1]' is not a valid file"
     end
-  else
-    echo "'$argv[1]' is not a valid file"
-  end
 end
+
+# Execute starship prompt
+starship init fish | source
