@@ -226,8 +226,8 @@ def init_colors():
 
 colors = init_colors()
 colors[8] = colors[2]
-# colors[6] = ["#5e81ac", "#5e81ac"]
-colors[6] = ["#ebbcba", "#ebbcba"]
+colors[6] = ["#5e81ac", "#5e81ac"]
+# colors[6] = ["#ebbcba", "#ebbcba"]
 
 # WIDGETS FOR THE BAR
 
