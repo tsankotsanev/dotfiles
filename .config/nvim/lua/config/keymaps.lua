@@ -13,16 +13,16 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Set --
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+local o = vim.opt
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
+o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+o.undofile = true
 
-vim.opt.scrolloff = 8
-vim.opt.clipboard = "unnamedplus"
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
+o.expandtab = true
+o.smartindent = true
+o.scrolloff = 8
 
-vim.opt.updatetime = 50
+o.cursorline = false
