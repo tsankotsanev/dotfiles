@@ -3,7 +3,7 @@
     a = "!git status --short | grep '^.[^ ]' | grep -v '^A' | awk '{print $2}' | fzf --multi --preview 'git diff --color=always {}' --bind K:preview-up,J:preview-down | xargs git add"
     d = diff
     ci = commit
-    ca = commit -a
+    cm = commit -m
     co = checkout
     ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
     pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
