@@ -9,8 +9,26 @@ return {
                         col = "50%",
                     },
                     size = {
-                        width = 50,
+                        width = 45,
                         height = "auto",
+                    },
+                },
+                popupmenu = {
+                    relative = "editor",
+                    position = {
+                        row = 23,
+                        col = "50%",
+                    },
+                    size = {
+                        width = 45,
+                        height = 5,
+                    },
+                    border = {
+                        style = "rounded",
+                        padding = { 0, 1 },
+                    },
+                    win_options = {
+                        winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
                     },
                 },
             },
