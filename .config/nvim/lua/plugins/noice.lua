@@ -21,7 +21,7 @@ return {
                     },
                     size = {
                         width = 45,
-                        height = 5,
+                        height = 10,
                     },
                     border = {
                         style = "rounded",
