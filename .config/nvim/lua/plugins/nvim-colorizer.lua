@@ -4,7 +4,7 @@ return {
     event = "BufRead",
     config = function()
         require("colorizer").setup({ "*" }, {
-            RGB = true, -- #RGB hex codes
+            RGB = false, -- #RGB hex codes
             RRGGBB = true, -- #RRGGBB hex codes
             names = false, -- "Name" codes like Blue
             RRGGBBAA = false, -- #RRGGBBAA hex codes

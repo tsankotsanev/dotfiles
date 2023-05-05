@@ -27,11 +27,11 @@ alias l. "exa -a | grep -E '^\.'"
 alias lt "ls --tree --level=2 --long --git"
 
 # Navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
+alias .. "cd .."
+alias ... "cd ../.."
+alias .3 "cd ../../.."
+alias .4 "cd ../../../.."
+alias .5 "cd ../../../../.."
 
 # Night light
 alias day "redshift -P -O 5600"
@@ -110,3 +110,5 @@ end
 
 # Execute starship prompt
 starship init fish | source
+
+export PATH="$PATH:/home/whitez/.bin"
