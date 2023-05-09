@@ -1,6 +1,6 @@
 [alias]
     st = status
-    a = "!git status --short | grep '^.[^ ]' | grep -v '^A' | awk '{print $2}' | fzf --multi --preview 'git diff --color=always {}' --bind K:preview-up,J:preview-down | xargs git add"
+    a = "!git status --short | grep '^.[^ ]' | grep -v '^A' | awk '{print $2}' | fzf --multi --preview 'git diff --color=always {}' --bind K:preview-up,J:preview-down | xargs git add ; git status --short"
     d = diff
     ci = commit
     cm = commit -m
