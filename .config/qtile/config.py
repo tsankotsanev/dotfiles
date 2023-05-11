@@ -301,9 +301,9 @@ def init_widgets_defaults():
 
 widget_defaults = init_widgets_defaults()
 
-icon_font = "FontAwesome"
+icon_font = "Fira Code Nerd Font"
 icon_size = 16
-text_font = "Ubuntu Italic Bold"
+text_font = "Hack Nerd Font Bold"
 text_size = 14
 
 
