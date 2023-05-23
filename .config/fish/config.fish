@@ -1,4 +1,4 @@
-# Source private configs if exists
+# Source configs and scripts
 
 if [ -e ~/.config/fish/config_work.fish ]
     and source ~/.config/fish/config_work.fish
@@ -8,8 +8,16 @@ if [ -e ~/.config/fish/config_private.fish ]
     and source ~/.config/fish/config_private.fish
 end
 
+if [ -e ~/.config/fish/config_private.fish ]
+    and set -gx PATH ~/Scripts $PATH
+end
+
 ### Set ###
 
+# Rose pine theme
+fish_config theme choose "Rosé Pine"
+
+set -gx PATH /home/whitez/.bin $PATH
 set fish_greeting
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
@@ -52,6 +60,10 @@ alias nvbash "$EDITOR ~/.bashrc"
 alias nvfish "$EDITOR ~/.config/fish/config.fish"
 alias nvbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
 alias nvstarship "$EDITOR ~/.config/starship.toml"
+
+# Shutdown
+alias sr "sudo reboot"
+alias ss "sudo shutdown now"
 
 ### Functions ###
 
