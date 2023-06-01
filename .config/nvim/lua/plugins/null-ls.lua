@@ -9,7 +9,7 @@ return {
         table.insert(
             opts.sources,
             nls.builtins.formatting.black.with({
-                extra_args = { "--line-length", "79" },
+                extra_args = { "--line-length", "79", "--fast" },
             })
         )
     end,
