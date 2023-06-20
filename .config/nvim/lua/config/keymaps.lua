@@ -25,4 +25,4 @@ o.expandtab = true
 o.smartindent = true
 o.scrolloff = 8
 
-o.cursorline = false
+o.cursorline = true
