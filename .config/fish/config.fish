@@ -65,6 +65,9 @@ alias nvstarship "$EDITOR ~/.config/starship.toml"
 alias sr "sudo reboot"
 alias ss "sudo shutdown now"
 
+# Utils
+alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
+
 ### Functions ###
 
 # Make a directory and cd into it

@@ -6,18 +6,18 @@ scrolling:
 
 font:
   normal:
-    family: Fira Code Nerd Font
+    family: Hack Nerd Font
     style: Regular
 
   bold:
-    family: Fira Code Nerd Font
+    family: Hack Nerd Font
     style: Bold
 
   itallic:
-  family: Fira Code Nerd Font
+  family: Hack Nerd Font
   style: Itallic
 
-  size: 12.5
+  size: 13
 
 colors:
   primary:
