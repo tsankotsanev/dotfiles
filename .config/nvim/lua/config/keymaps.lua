@@ -15,6 +15,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Set --
 local o = vim.opt
 
+o.guicursor = ""
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.undofile = true
 

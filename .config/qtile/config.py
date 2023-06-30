@@ -1,15 +1,11 @@
 import os
 import socket
 import subprocess
-from typing import List  # noqa: F401
 from libqtile import layout, bar, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
+from libqtile.config import  Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
-from libqtile.widget import Spacer
 
-# import arcobattery
 
-# mod4 or mod = super key
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
@@ -32,17 +28,15 @@ def window_to_next_group(qtile):
 
 
 keys = [
-    # Most of our keybindings are in sxhkd file - except these
-    # SUPER + FUNCTION KEYS
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "q", lazy.window.kill()),
-    # SUPER + SHIFT KEYS
+    # Super + Shift
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
-    # QTILE LAYOUT KEYS
+    # Qtile layout
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "space", lazy.next_layout()),
-    # CHANGE FOCUS
+    # Change focus
     Key([mod], "Up", lazy.layout.up()),
     Key([mod], "Down", lazy.layout.down()),
     Key([mod], "Left", lazy.layout.left()),
@@ -51,7 +45,7 @@ keys = [
     Key([mod], "j", lazy.layout.down()),
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
-    # RESIZE UP, DOWN, LEFT, RIGHT
+    # Resize up, down, left, right
     Key(
         [mod, "control"],
         "l",
@@ -250,7 +244,7 @@ layout_theme = init_layout_theme()
 layouts = [
     layout.MonadTall(
         margin=10,
-        border_width=3,
+        border_width=2,
         border_focus="#4B244B",
         border_normal="#2C242C",
     ),

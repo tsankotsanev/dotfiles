@@ -25,7 +25,7 @@ set -gx EDITOR nvim
 ### Aliases ###
 
 # Frequently used commands
-alias nv nvim
+alias vim nvim
 alias g git
 
 # Change ls to exa
@@ -33,13 +33,6 @@ alias ls "exa -lh --icons"
 alias la "ll -a"
 alias l. "exa -a | grep -E '^\.'"
 alias lt "ls --tree --level=2 --long --git"
-
-# Navigation
-alias .. "cd .."
-alias ... "cd ../.."
-alias .3 "cd ../../.."
-alias .4 "cd ../../../.."
-alias .5 "cd ../../../../.."
 
 # Night light
 alias day "redshift -P -O 5600"
@@ -52,14 +45,14 @@ alias update "sudo pacman -Syyu --noconfirm"
 alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 
 # Most opened files
-alias nvalacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
-alias nvqtile "$EDITOR ~/.config/qtile/config.py"
-alias nvautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
-alias nvpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
-alias nvbash "$EDITOR ~/.bashrc"
-alias nvfish "$EDITOR ~/.config/fish/config.fish"
-alias nvbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
-alias nvstarship "$EDITOR ~/.config/starship.toml"
+alias valacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
+alias vqtile "$EDITOR ~/.config/qtile/config.py"
+alias vautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
+alias vpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
+alias vbash "$EDITOR ~/.bashrc"
+alias vfish "$EDITOR ~/.config/fish/config.fish"
+alias vbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
+alias vstarship "$EDITOR ~/.config/starship.toml"
 
 # Shutdown
 alias sr "sudo reboot"
