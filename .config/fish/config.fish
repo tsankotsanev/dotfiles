@@ -1,15 +1,14 @@
 # Source configs and scripts
 
+export PATH="$PATH:/home/whitez/.bin"
+export PATH="$PATH:/home/whitez/Scripts"
+
 if [ -e ~/.config/fish/config_work.fish ]
     and source ~/.config/fish/config_work.fish
 end
 
 if [ -e ~/.config/fish/config_private.fish ]
     and source ~/.config/fish/config_private.fish
-end
-
-if [ -e ~/.config/fish/config_private.fish ]
-    and set -gx PATH ~/Scripts $PATH
 end
 
 ### Set ###
@@ -20,7 +19,6 @@ fish_config theme choose "Rosé Pine"
 set -gx PATH /home/whitez/.bin $PATH
 set fish_greeting
 set -gx TERM xterm-256color
-set -gx EDITOR nvim
 
 ### Aliases ###
 
@@ -45,14 +43,16 @@ alias update "sudo pacman -Syyu --noconfirm"
 alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 
 # Most opened files
-alias valacritty "$EDITOR ~/.config/alacritty/alacritty.yml"
-alias vqtile "$EDITOR ~/.config/qtile/config.py"
-alias vautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
-alias vpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
-alias vbash "$EDITOR ~/.bashrc"
-alias vfish "$EDITOR ~/.config/fish/config.fish"
-alias vbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
-alias vstarship "$EDITOR ~/.config/starship.toml"
+alias valacritty "vim ~/.config/alacritty/alacritty.yml"
+alias vqtile "vim ~/.config/qtile/config.py"
+alias vautostart "vim ~/.config/qtile/scripts/autostart.sh"
+alias vpicom "vim ~/.config/qtile/scripts/picom.conf"
+alias vbash "vim ~/.bashrc"
+alias vfish "vim ~/.config/fish/config.fish"
+alias vfishwork "vim ~/.config/fish/config_work.fish"
+alias vfishpvt "vim ~/.config/fish/config_private.fish"
+alias vbinds "vim ~/.config/qtile/sxhkd/sxhkdrc"
+alias vstarship "vim ~/.config/starship.toml"
 
 # Shutdown
 alias sr "sudo reboot"
@@ -118,5 +118,3 @@ end
 
 # Execute starship prompt
 starship init fish | source
-
-export PATH="$PATH:/home/whitez/.bin"

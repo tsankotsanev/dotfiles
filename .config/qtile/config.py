@@ -243,7 +243,7 @@ layout_theme = init_layout_theme()
 
 layouts = [
     layout.MonadTall(
-        margin=10,
+        margin=4,
         border_width=2,
         border_focus="#4B244B",
         border_normal="#2C242C",
@@ -277,6 +277,8 @@ def init_colors():
 colors = init_colors()
 colors[8] = colors[2]
 colors[6] = ["#ebbcba", "#ebbcba"]
+colors[1] = ["#191724", "#191724"]
+colors[0] = ["#191724", "#191724"]
 
 # WIDGETS FOR THE BAR
 
