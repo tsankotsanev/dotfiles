@@ -4,10 +4,9 @@
 
 -- Remap --
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Preview directory" })
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[P]re[v]iew Directory" })
 
--- Keep cursor in the middle
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- Keep cursor in the middle vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
