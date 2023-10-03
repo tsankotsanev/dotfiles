@@ -41,6 +41,7 @@ alias update "sudo pacman -Syyu --noconfirm"
 
 # Bare git repo alias for dotfiles
 alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
+alias confpvt="git --git-dir=$HOME/.confpvt/ --work-tree=$HOME"
 
 # Most opened files
 alias valacritty "vim ~/.config/alacritty/alacritty.yml"
