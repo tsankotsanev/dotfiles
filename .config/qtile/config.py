@@ -2,7 +2,7 @@ import os
 import socket
 import subprocess
 from libqtile import layout, bar, widget, hook
-from libqtile.config import  Drag, Group, Key, Match, Screen
+from libqtile.config import Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
 
 
@@ -384,7 +384,7 @@ def init_widgets_list():
         widget.Memory(
             font=text_font,
             # I hardcoded this cause it looks awful otherwise...
-            format="{MemUsed: .0f}{mm}/15921{mm}",
+            format="{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}",
             foreground=colors[6],
             background=colors[1],
             fontsize=text_size,
