@@ -15,8 +15,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 local o = vim.opt
 
 o.guicursor = ""
-o.undodir = os.getenv("HOME") .. "/.vim/undodir"
-o.undofile = true
 
 o.tabstop = 4
 o.softtabstop = 4
