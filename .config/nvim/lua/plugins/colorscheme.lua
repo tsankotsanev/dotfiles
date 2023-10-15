@@ -1,5 +1,5 @@
 return {
-    { "rose-pine/nvim", lazy = true },
+    { "rose-pine/nvim" },
 
     {
         "LazyVim/LazyVim",
