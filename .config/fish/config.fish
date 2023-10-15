@@ -1,5 +1,3 @@
-# Source configs and scripts
-
 export PATH="$PATH:/home/whitez/.bin"
 export PATH="$PATH:/home/whitez/Scripts"
 
@@ -13,7 +11,6 @@ end
 
 ### Set ###
 
-# Rose pine theme
 fish_config theme choose "Rosé Pine"
 
 set -gx PATH /home/whitez/.bin $PATH
@@ -21,29 +18,22 @@ set fish_greeting
 set -gx TERM xterm-256color
 
 ### Aliases ###
-
-# Frequently used commands
 alias vim nvim
 alias g git
 
-# Change ls to exa
 alias ls "exa -lh --icons"
 alias la "ll -a"
 alias l. "exa -a | grep -E '^\.'"
 alias lt "ls --tree --level=2 --long --git"
 
-# Night light
 alias day "redshift -P -O 5600"
 alias night "redshift -P -O 3400"
 
-# System
 alias update "sudo pacman -Syyu --noconfirm"
 
-# Bare git repo alias for dotfiles
 alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 alias confpvt="git --git-dir=$HOME/.confpvt/ --work-tree=$HOME"
 
-# Most opened files
 alias valacritty "vim ~/.config/alacritty/alacritty.yml"
 alias vqtile "vim ~/.config/qtile/config.py"
 alias vautostart "vim ~/.config/qtile/scripts/autostart.sh"
@@ -55,26 +45,12 @@ alias vfishpvt "vim ~/.config/fish/config_private.fish"
 alias vbinds "vim ~/.config/qtile/sxhkd/sxhkdrc"
 alias vstarship "vim ~/.config/starship.toml"
 
-# Shutdown
 alias sr "sudo reboot"
 alias ss "sudo shutdown now"
 
-# Utils
 alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 
 ### Functions ###
-
-# Make a directory and cd into it
-function mkdircd
-    mkdir -p $argv
-    cd $argv[-1]
-end
-
-# Change to directory and list the files if there are any
-function cx
-    cd $argv[-1]
-    ls
-end
 
 # Extractor for all kinds of archives
 # usage: ex <file>
@@ -117,5 +93,4 @@ function ex
     end
 end
 
-# Execute starship prompt
 starship init fish | source
