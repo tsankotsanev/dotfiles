@@ -1,6 +1,4 @@
-export PATH="$PATH:/home/whitez/.bin"
-export PATH="$PATH:/home/whitez/Scripts"
-
+# source private configs if exists
 if [ -e ~/.config/fish/config_work.fish ]
     and source ~/.config/fish/config_work.fish
 end
@@ -13,27 +11,48 @@ end
 
 fish_config theme choose "Rosé Pine"
 
+export PATH="$PATH:/home/whitez/.bin"
+export PATH="$PATH:/home/whitez/Scripts"
+export PATH="$PATH:/home/whitez/Wallpapers"
+
 set -gx PATH /home/whitez/.bin $PATH
+# remove fish greeting
 set fish_greeting
 set -gx TERM xterm-256color
 
 ### Aliases ###
+
+# simplify
 alias vim nvim
 alias g git
+alias srcfish ". .config/fish/config.fish"
 
+# replace ls with exa
 alias ls "exa -lh --icons"
 alias la "ll -a"
 alias l. "exa -a | grep -E '^\.'"
 alias lt "ls --tree --level=2 --long --git"
 
-alias day "redshift -P -O 5600"
-alias night "redshift -P -O 3400"
+# ip
+alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 
+# set wallpapers
+alias setbg "feh --bg-fill"
+
+# redshift
+alias day "redshift -P -O 5600 > /dev/null && echo 'Redshift set to daytime.'"
+alias night "redshift -P -O 3400 > /dev/null && echo 'Redshift set to night-time.'"
+
+# system
 alias update "sudo pacman -Syyu --noconfirm"
+alias sr "sudo reboot"
+alias ss "sudo shutdown now"
 
+# bare repos for dotfilles
 alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 alias confpvt="git --git-dir=$HOME/.confpvt/ --work-tree=$HOME"
 
+# config files
 alias valacritty "vim ~/.config/alacritty/alacritty.yml"
 alias vqtile "vim ~/.config/qtile/config.py"
 alias vautostart "vim ~/.config/qtile/scripts/autostart.sh"
@@ -42,19 +61,14 @@ alias vbash "vim ~/.bashrc"
 alias vfish "vim ~/.config/fish/config.fish"
 alias vfishwork "vim ~/.config/fish/config_work.fish"
 alias vfishpvt "vim ~/.config/fish/config_private.fish"
+alias vtmux "vim ~/.tmux.conf"
 alias vbinds "vim ~/.config/qtile/sxhkd/sxhkdrc"
 alias vstarship "vim ~/.config/starship.toml"
 
-alias sr "sudo reboot"
-alias ss "sudo shutdown now"
-
-alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 
 ### Functions ###
 
-# Extractor for all kinds of archives
-# usage: ex <file>
-function ex
+function ex --description "Extractor for all kinds of archives."
     if test -f $argv[1]
         switch (basename $argv[1])
             case '*.tar.bz2'
@@ -93,4 +107,14 @@ function ex
     end
 end
 
-starship init fish | source
+
+function sudo --description "Replacement for Bash 'sudo !!' command to run last command using sudo."
+    if test "$argv" = !!
+        eval command sudo $history[1]
+    else
+        command sudo $argv
+    end
+end
+
+# initialize starship prompt
+starship init fish | .

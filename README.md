@@ -32,3 +32,8 @@ conf add .config/fish/config.fish
 conf commit -m "Add config.fish"
 conf push
 ```
+
+## Resources
+
+- **Tmux**
+  - **[Neovim Colors fix](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6)**

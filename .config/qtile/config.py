@@ -113,8 +113,7 @@ keys = [
     Key([mod, "mod1"], "j", lazy.layout.flip_down()),
     Key([mod, "mod1"], "l", lazy.layout.flip_right()),
     Key([mod, "mod1"], "h", lazy.layout.flip_left()),
-    # MOVE WINDOWS UP OR DOWN BSP LAYOUT
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    # MOVE WINDOWS UP OR DOWN BSP LAYOUT Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
     Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
@@ -243,7 +242,7 @@ layout_theme = init_layout_theme()
 
 layouts = [
     layout.MonadTall(
-        margin=4,
+        margin=0,
         border_width=2,
         border_focus="#4B244B",
         border_normal="#2C242C",
@@ -354,10 +353,11 @@ def init_widgets_list():
         #          foreground = colors[5],
         #          background = colors[1],
         #          ),
+        widget.Systray(background=colors[1], icon_size=20, padding=4),
         widget.TextBox(
             font=icon_font,
             fontsize=icon_size,
-            text=" 🔁 ",
+            text="  ",
             foreground=colors[8],
             background=colors[1],
             padding=0,
@@ -367,7 +367,7 @@ def init_widgets_list():
             fontsize=text_size,
             update_interval=1800,
             distro="Arch_checkupdates",
-            display_format="{updates} updates",
+            display_format="{updates}",
             foreground=colors[6],
             background=colors[1],
             colour_have_updates=colors[6],
@@ -383,8 +383,8 @@ def init_widgets_list():
         ),
         widget.Memory(
             font=text_font,
-            # I hardcoded this cause it looks awful otherwise...
             format="{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}",
+            measure_mem="G",
             foreground=colors[6],
             background=colors[1],
             fontsize=text_size,
@@ -406,7 +406,7 @@ def init_widgets_list():
         ),
         widget.TextBox(
             font=icon_font,
-            text="  ",
+            text="  ",
             foreground=colors[8],
             background=colors[1],
             padding=0,
@@ -451,7 +451,7 @@ def init_widgets_list():
         # ),
         widget.TextBox(
             font=icon_font,
-            text="  ",
+            text=" 󰸘 ",
             foreground=colors[8],
             background=colors[1],
             padding=0,
@@ -462,7 +462,7 @@ def init_widgets_list():
             foreground=colors[6],
             background=colors[1],
             fontsize=text_size,
-            format="%a, %B %d",
+            format="%a, %b %d",
         ),
         widget.TextBox(
             font=icon_font,
@@ -479,13 +479,6 @@ def init_widgets_list():
             fontsize=text_size,
             format="%H:%M",
         ),
-        # widget.Sep(
-        #          linewidth = 1
-        #          padding = 10,
-        #          foreground = colors[2],
-        #          background = colors[1]
-        #          ),
-        widget.Systray(background=colors[1], icon_size=20, padding=4),
     ]
     return widgets_list
 

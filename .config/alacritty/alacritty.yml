@@ -1,4 +1,6 @@
-TERM: xterm-256color
+env:
+  TERM: xterm-256color
+
 window:
   opacity: 1
 
@@ -7,18 +9,21 @@ scrolling:
 
 font:
   normal:
-    family: Fira Code Nerd Font
+    family: FiraCode Nerd Font
     style: Regular
 
   bold:
-    family: Fira Code Nerd Font
+    family: FiraCode Nerd Font
     style: Bold
 
   itallic:
-  family: Fira Code Nerd Font
-  style: Itallic
+    family: FiraCode Nerd Font
+    style: Itallic
 
-  size: 9.5
+  bold_itallic:
+    family: FiraCode Nerd Font
+
+  size: 12.5
 
 colors:
   primary:

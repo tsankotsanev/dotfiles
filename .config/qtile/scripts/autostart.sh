@@ -1,14 +1,13 @@
 #!/bin/bash
 
 function run {
-  if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null;
-  then
-    $@&
-  fi
+	if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null; then
+		$@ &
+	fi
 }
 
 # night light
-redshift -P -O 5600
+redshift -P -O 3400
 
 # monitor
 xrandr --output HDMI-0 --mode 1920x1080 --rate 240
@@ -22,7 +21,6 @@ setxkbmap -layout "us, bg" -variant ",phonetic" -option "grp:alt_shift_toggle"
 # set chrome as default browser
 xdg-mime default google-chrome.desktop x-scheme-handler/https x-scheme-handler/https
 
-
 #Some ways to set your wallpaper besides variety or nitrogen
 #feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
 #feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
@@ -30,11 +28,9 @@ xdg-mime default google-chrome.desktop x-scheme-handler/https x-scheme-handler/h
 #feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
 #start the conky to learn the shortcuts
 #(conky -c $HOME/.config/qtile/scripts/system-overview) &
-feh --bg-fill ~/Pictures/8be47fba3f978b98406dfc320acf1205.jpg
 
 #start sxhkd to replace Qtile native key-bindings
 run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
-
 
 #starting utility applications at boot time
 run variety &
