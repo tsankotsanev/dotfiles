@@ -35,5 +35,5 @@ conf push
 
 ## Resources
 
-- **Tmux**
-  - **[Set colors](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6)**
+- **[Tmux](https://github.com/tmux/tmux)**
+  - **[Configure colors](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6)**
