@@ -357,7 +357,7 @@ def init_widgets_list():
         widget.TextBox(
             font=icon_font,
             fontsize=icon_size,
-            text="  ",
+            text=" 👻",
             foreground=colors[8],
             background=colors[1],
             padding=0,
@@ -367,7 +367,7 @@ def init_widgets_list():
             fontsize=text_size,
             update_interval=1800,
             distro="Arch_checkupdates",
-            display_format="{updates}",
+            display_format=" {updates}",
             foreground=colors[6],
             background=colors[1],
             colour_have_updates=colors[6],

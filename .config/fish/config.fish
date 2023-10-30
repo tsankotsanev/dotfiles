@@ -8,24 +8,26 @@ if [ -e ~/.config/fish/config_private.fish ]
 end
 
 ### Set ###
-
 fish_config theme choose "Rosé Pine"
 
-export PATH="$PATH:/home/whitez/.bin"
-export PATH="$PATH:/home/whitez/Scripts"
-export PATH="$PATH:/home/whitez/Wallpapers"
+set fish_greeting
+set -U FZF_LEGACY_KEYBINDINGS 0
 
 set -gx PATH /home/whitez/.bin $PATH
-# remove fish greeting
-set fish_greeting
+set -gx PATH /home/whitez/Scripts/ $PATH
 set -gx TERM xterm-256color
+set -gx EDITOR nvim
+set -gx BROWSER brave
+
 
 ### Aliases ###
 
 # simplify
 alias vim nvim
 alias g git
-alias srcfish ". .config/fish/config.fish"
+
+# reload configs
+alias rfish ". .config/fish/config.fish"
 
 # replace ls with exa
 alias ls "exa -lh --icons"
@@ -37,7 +39,7 @@ alias lt "ls --tree --level=2 --long --git"
 alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 
 # set wallpapers
-alias setbg "feh --bg-fill"
+alias nitrogen "nitrogen Wallpapers/"
 
 # redshift
 alias day "redshift -P -O 5600 > /dev/null && echo 'Redshift set to daytime.'"

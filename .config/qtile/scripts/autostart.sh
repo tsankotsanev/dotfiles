@@ -6,33 +6,28 @@ function run {
 	fi
 }
 
-# night light
+# nightlight
 redshift -P -O 3400
 
-# monitor
-xrandr --output HDMI-0 --mode 1920x1080 --rate 240
+# set monitor resolution to and refresh rate
+if xrandr | grep "1366x768"; then
+	xrandr -s 1366x768 || echo "Cannot set 1366x768 resolution."
+elif xrandr | grep "1920x1080"; then
+	xrandr --output HDMI-0 --mode 1920x1080 --rate 240 || echo "Cannot set 1920x1080 resolution."
+else
+	echo "Could not set a resolution."
+fi
 
-# mouse
+# mouse sensitivity
 xinput --set-prop 9 'libinput Accel Speed' -0.6
 
 # keyboard
 setxkbmap -layout "us, bg" -variant ",phonetic" -option "grp:alt_shift_toggle"
 
-# set chrome as default browser
-xdg-mime default google-chrome.desktop x-scheme-handler/https x-scheme-handler/https
-
-#Some ways to set your wallpaper besides variety or nitrogen
-#feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
-#feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
-#wallpaper for other Arch based systems
-#feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
-#start the conky to learn the shortcuts
-#(conky -c $HOME/.config/qtile/scripts/system-overview) &
-
-#start sxhkd to replace Qtile native key-bindings
+# start sxhkd to replace Qtile native key-bindings
 run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 
-#starting utility applications at boot time
+# starting utility applications at boot time
 run variety &
 run nm-applet &
 run pamac-tray &
@@ -43,16 +38,10 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-#starting user applications at boot time
+# starting user applications at boot time
 run volumeicon &
-#run discord &
-#nitrogen --restore &
+# run discord &
+nitrogen --restore &
 run caffeine -a &
-#run vivaldi-stable &
-#run firefox &
-#run thunar &
-#run dropbox &
-#run insync start &
-#run spotify &
-#run atom &
-#run telegram-desktop &
+# run spotify &
+# run telegram-desktop &
