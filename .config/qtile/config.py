@@ -324,15 +324,15 @@ def init_widgets_list():
         widget.Sep(
             linewidth=1, padding=10, foreground=colors[8], background=colors[1]
         ),
-        widget.CurrentLayout(
-            font=text_font,
-            fontsize=text_size,
-            foreground=colors[6],
-            background=colors[1],
-        ),
-        widget.Sep(
-            linewidth=1, padding=10, foreground=colors[8], background=colors[1]
-        ),
+        # widget.CurrentLayout(
+        #     font=text_font,
+        #     fontsize=text_size,
+        #     foreground=colors[6],
+        #     background=colors[1],
+        # ),
+        # widget.Sep(
+        #     linewidth=1, padding=10, foreground=colors[8], background=colors[1]
+        # ),
         widget.WindowName(
             font=text_font,
             fontsize=text_size,
