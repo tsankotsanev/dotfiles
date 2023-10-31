@@ -230,10 +230,10 @@ for i in groups:
 
 def init_layout_theme():
     return {
-        "margin": 7,
+        "margin": 0,
         "border_width": 2,
-        "border_focus": "#5e81ac",
-        "border_normal": "#4c566a",
+        "border_focus": "#4B244B",
+        "border_normal": "#2C242C",
     }
 
 
@@ -241,18 +241,13 @@ layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadTall(
-        margin=0,
-        border_width=2,
-        border_focus="#4B244B",
-        border_normal="#2C242C",
-    ),
-    layout.MonadWide(**layout_theme),
-    layout.Matrix(**layout_theme),
-    layout.Bsp(**layout_theme),
-    layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme),
-    layout.Max(**layout_theme),
+    layout.MonadTall(**layout_theme),
+    # layout.MonadWide(**layout_theme),
+    # layout.Matrix(**layout_theme),
+    # layout.Bsp(**layout_theme),
+    # layout.Floating(**layout_theme),
+    # layout.RatioTile(**layout_theme),
+    # layout.Max(**layout_theme),
 ]
 
 
