@@ -7,7 +7,7 @@ function run {
 }
 
 # nightlight
-redshift -P -O 3400
+redshift -P -O 2500
 
 # set monitor resolution to and refresh rate
 if xrandr | grep "1366x768"; then
