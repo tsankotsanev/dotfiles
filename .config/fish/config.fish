@@ -26,7 +26,7 @@ alias vim nvim
 alias g git
 
 # reload configs
-alias rfish ". .config/fish/config.fish"
+alias .fish ". ~/.config/fish/config.fish"
 
 # replace ls with exa
 alias ls "exa -lh --icons"
