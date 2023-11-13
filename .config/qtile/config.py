@@ -269,7 +269,7 @@ def init_colors():
 
 
 colors = init_colors()
-colors[8] = colors[2]
+colors[8] = colors[5]
 colors[6] = ["#ebbcba", "#ebbcba"]
 colors[1] = ["#191724", "#191724"]
 colors[0] = ["#191724", "#191724"]
