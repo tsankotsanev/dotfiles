@@ -348,7 +348,7 @@ def init_widgets_list():
         #          foreground = colors[5],
         #          background = colors[1],
         #          ),
-        widget.Systray(background=colors[1], icon_size=20, padding=4),
+        widget.Systray(background=colors[1], icon_size=20, padding=0),
         widget.TextBox(
             font=icon_font,
             fontsize=icon_size,

@@ -18,6 +18,9 @@ set -gx TERM xterm-256color
 set -gx EDITOR nvim
 set -gx BROWSER brave
 
+# unbind Ctrl + D
+bind --erase --preset \cd
+bind \cd true
 
 ### Aliases ###
 
