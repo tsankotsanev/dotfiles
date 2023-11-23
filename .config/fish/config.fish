@@ -18,13 +18,9 @@ set -gx TERM xterm-256color
 set -gx EDITOR nvim
 set -gx BROWSER brave
 
-# unbind Ctrl + D
-bind --erase --preset \cd
-bind \cd true
-
 ### Aliases ###
 
-# simplify
+# shorten
 alias vim nvim
 alias g git
 
@@ -37,10 +33,10 @@ alias la "ll -a"
 alias l. "exa -a | grep -E '^\.'"
 alias lt "ls --tree --level=2 --long --git"
 
-# ip
+# ip check
 alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 
-# set wallpapers
+# set wallpaper
 alias nitrogen "nitrogen Wallpapers/"
 
 # redshift
