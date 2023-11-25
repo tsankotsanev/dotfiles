@@ -49,7 +49,7 @@ alias sr "sudo reboot"
 alias ss "sudo shutdown now"
 
 # bare repos for dotfilles
-alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
+alias conf "git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
 alias confpvt="git --git-dir=$HOME/.confpvt/ --work-tree=$HOME"
 
 # config files
