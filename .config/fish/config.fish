@@ -49,8 +49,8 @@ alias sr "sudo reboot"
 alias ss "sudo shutdown now"
 
 # bare repos for dotfilles
-alias conf "git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
-alias confpvt="git --git-dir=$HOME/.confpvt/ --work-tree=$HOME"
+alias dot "git --git-dir=$HOME/.files/ --work-tree=$HOME"
+alias dotpvt "git --git-dir=$HOME/.filespvt/ --work-tree=$HOME"
 
 # config files
 alias valacritty "vim ~/.config/alacritty/alacritty.yml"
