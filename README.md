@@ -1,37 +1,27 @@
 # dotfiles
 
-## Setup
+## Installation
 
 ```sh
-git init --bare $HOME/.myconf
-alias conf='git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
-conf remote add origin git@github.com:tsankotsanev/dotfiles.git
-```
-
-## Replication
-
-```sh
-git clone --separate-git-dir=$HOME/.myconf https://github.com/tsankotsanev/dotfiles.git myconf-tmp
-rsync --recursive --verbose --exclude '.git' myconf-tmp/ $HOME/
-rm --recursive myconf-tmp
-```
-
-## Configuration
-
-```sh
-conf config status.showUntrackedFiles no
-conf remote set-url origin git@github.com:tsankotsanev/dotfiles.git
+dot remote add origin git@github.com:tsankotsanev/dotfiles.git
+git clone --separate-git-dir=$HOME/.files https://github.com/tsankotsanev/dotfiles.git dotfiles-tmp
+rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
+rm --recursive dotfiles-tmp
+dot config status.showUntrackedFiles no
+dot remote set-url origin git@github.com:tsankotsanev/dotfiles.git
 ```
 
 ## Usage
 
 ```sh
 cd ~
-conf status
-conf add .config/fish/config.fish
-conf commit -m "Add config.fish"
-conf push
+dot status
+dot add .config/fish/config.fish
+dot commit -m "Add config.fish"
+dot push
 ```
+
+#### NOTE: New file or directory creations shouild be added manually with `dot add path/to/file`
 
 ## Resources
 
