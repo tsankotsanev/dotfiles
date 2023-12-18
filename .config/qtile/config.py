@@ -378,7 +378,8 @@ def init_widgets_list():
         ),
         widget.Memory(
             font=text_font,
-            format="{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}",
+            # format="{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}",
+            format="{MemUsed: .0f}{mm}",
             measure_mem="G",
             foreground=colors[6],
             background=colors[1],
