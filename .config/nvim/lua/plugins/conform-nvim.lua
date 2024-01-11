@@ -9,6 +9,9 @@ return {
             black = {
                 prepend_args = { "-l", "79" },
             },
+            prettier = {
+                prepend_args = { "--tab-width", "4" },
+            },
         },
     },
 }
