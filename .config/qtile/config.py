@@ -285,8 +285,8 @@ widget_defaults = init_widgets_defaults()
 
 icon_font = "Hack Nerd Font"
 icon_size = 15
-text_font = "Ubuntu Bold"
-text_size = 14
+text_font = "Hack Nerd Font"
+text_size = 13
 
 
 def init_widgets_list():

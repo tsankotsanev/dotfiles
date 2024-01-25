@@ -20,6 +20,9 @@ set -gx BROWSER brave
 
 ### Aliases ###
 
+# fun
+alias weather "curl -4 wttr.in"
+
 # shorten
 alias vim nvim
 alias g git
@@ -53,7 +56,7 @@ alias dot "git --git-dir=$HOME/.files/ --work-tree=$HOME"
 alias dotpvt "git --git-dir=$HOME/.filespvt/ --work-tree=$HOME"
 
 # config files
-alias valacritty "vim ~/.config/alacritty/alacritty.yml"
+alias valacritty "vim ~/.config/alacritty/alacritty.toml"
 alias vqtile "vim ~/.config/qtile/config.py"
 alias vautostart "vim ~/.config/qtile/scripts/autostart.sh"
 alias vpicom "vim ~/.config/qtile/scripts/picom.conf"

@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Preview Directory" })
 vim.keymap.set("n", "<leader>gd", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
 
--- Keep cursor in the middle while scrolling/searching
+-- keep cursor in the middle while scrolling/searching
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
