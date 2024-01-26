@@ -40,7 +40,7 @@ alias lt "ls --tree --level=2 --long --git"
 alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 
 # set wallpaper
-alias nitrogen "nitrogen Wallpapers/"
+alias nitrogen "nitrogen ~/Wallpapers/"
 
 # redshift
 alias day "redshift -P -O 5600 > /dev/null && echo 'Redshift set to daytime.'"

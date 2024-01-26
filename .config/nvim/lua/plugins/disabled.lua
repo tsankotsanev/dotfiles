@@ -7,6 +7,6 @@ return {
     -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
     -- { "lukas-reineke/indent-blankline.nvim", enabled = false },
     -- { "nvim-lualine/lualine.nvim", enabled = false },
-    -- { "rcarriga/nvim-notify", enabled = false },
+    { "rcarriga/nvim-notify", enabled = false },
     -- { "folke/noice.nvim", enabled = false },
 }
