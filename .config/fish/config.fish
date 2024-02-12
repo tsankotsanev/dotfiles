@@ -56,17 +56,17 @@ alias dot "git --git-dir=$HOME/.files/ --work-tree=$HOME"
 alias dotpvt "git --git-dir=$HOME/.filespvt/ --work-tree=$HOME"
 
 # config files
-alias valacritty "vim ~/.config/alacritty/alacritty.toml"
-alias vqtile "vim ~/.config/qtile/config.py"
-alias vautostart "vim ~/.config/qtile/scripts/autostart.sh"
-alias vpicom "vim ~/.config/qtile/scripts/picom.conf"
-alias vbash "vim ~/.bashrc"
-alias vfish "vim ~/.config/fish/config.fish"
-alias vfishwork "vim ~/.config/fish/config_work.fish"
-alias vfishpvt "vim ~/.config/fish/config_private.fish"
-alias vtmux "vim ~/.tmux.conf"
-alias vbinds "vim ~/.config/qtile/sxhkd/sxhkdrc"
-alias vstarship "vim ~/.config/starship.toml"
+alias valacritty "$EDITOR ~/.config/alacritty/alacritty.toml"
+alias vqtile "$EDITOR ~/.config/qtile/config.py"
+alias vautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
+alias vpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
+alias vbash "$EDITOR ~/.bashrc"
+alias vfish "$EDITOR ~/.config/fish/config.fish"
+alias vfishwork "$EDITOR ~/.config/fish/config_work.fish"
+alias vfishpvt "$EDITOR ~/.config/fish/config_private.fish"
+alias vtmux "$EDITOR ~/.tmux.conf"
+alias vbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
+alias vstarship "$EDITOR ~/.config/starship.toml"
 
 
 ### Functions ###

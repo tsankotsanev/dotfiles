@@ -1,11 +1,7 @@
 return {
-    { "rose-pine/nvim" },
-
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            colorscheme = "rose-pine",
-            lazy = true,
-        },
+    "LazyVim/LazyVim",
+    opts = {
+        colorscheme = "catppuccin",
+        lazy = true,
     },
 }

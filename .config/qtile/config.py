@@ -285,7 +285,7 @@ widget_defaults = init_widgets_defaults()
 
 icon_font = "Hack Nerd Font"
 icon_size = 15
-text_font = "Hack Nerd Font"
+text_font = "Hack Nerd Font Bold"
 text_size = 13
 
 
@@ -473,7 +473,7 @@ def init_widgets_list():
             foreground=colors[6],
             background=colors[1],
             fontsize=text_size,
-            format="%H:%M",
+            format="%H:%M:%S",
         ),
     ]
     return widgets_list
