@@ -270,9 +270,8 @@ def init_colors():
 
 colors = init_colors()
 colors[8] = colors[5]
-colors[6] = ["#ebbcba", "#ebbcba"]
-colors[1] = ["#191724", "#191724"]
-colors[0] = ["#191724", "#191724"]
+colors[6] = ["#abb2bf", "#abb2bf"]
+colors[1] = ["#1e1e2e", "#1e1e2e"]
 
 # WIDGETS FOR THE BAR
 
@@ -293,7 +292,7 @@ def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
         widget.Sep(
-            linewidth=0, padding=6, foreground=colors[2], background=colors[0]
+            linewidth=0, padding=6, foreground=colors[2], background=colors[1]
         ),
         widget.GroupBox(
             font=text_font,
@@ -313,7 +312,7 @@ def init_widgets_list():
             other_current_screen_border=colors[6],
             other_screen_border=colors[4],
             foreground=colors[2],
-            background=colors[0],
+            background=colors[1],
             hide_unused="True",
         ),
         widget.Sep(
