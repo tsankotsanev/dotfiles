@@ -142,3 +142,10 @@ symbol = " "
 
 [spack]
 symbol = "🅢 "
+
+# [gcloud]
+# format = 'on [$symbol$account(@$domain) (\($project\))]($style) '
+# [gcloud.project_aliases]
+# very-long-project-name = 'vlpn'
+[gcloud]
+disabled = true

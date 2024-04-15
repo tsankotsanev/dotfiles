@@ -121,3 +121,8 @@ end
 
 # initialize starship prompt
 starship init fish | .
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/whitez/Downloads/google-cloud-sdk/path.fish.inc' ]
+    . '/home/whitez/Downloads/google-cloud-sdk/path.fish.inc'
+end
