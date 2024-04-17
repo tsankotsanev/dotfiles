@@ -21,7 +21,7 @@ dot commit -m "Add config.fish"
 dot push
 ```
 
-> [NOTE]
+> [!NOTE]
 > New file or directory creations should be added manually with `dot add path/to/file`
 
 ## Resources
