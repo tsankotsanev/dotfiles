@@ -21,9 +21,10 @@ dot commit -m "Add config.fish"
 dot push
 ```
 
-#### NOTE: New file or directory creations should be added manually with `dot add path/to/file`
+> [NOTE]
+> New file or directory creations should be added manually with `dot add path/to/file`
 
 ## Resources
 
-- **[Tmux](https://github.com/tmux/tmux)**
-  - **[Configure colors](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6)**
+-   **[Tmux](https://github.com/tmux/tmux)**
+    -   **[Configure colors](https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6)**
