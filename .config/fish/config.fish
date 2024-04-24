@@ -21,7 +21,7 @@ set -gx BROWSER brave
 ### Aliases ###
 
 # fun
-alias weather "curl -4 wttr.in"
+alias weather "curl wttr.in"
 
 # shorten
 alias vim nvim
