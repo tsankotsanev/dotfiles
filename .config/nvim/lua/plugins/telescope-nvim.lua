@@ -4,7 +4,19 @@ return {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
         config = function()
-            require("telescope").load_extension("fzf")
+            require("telescope").setup({
+                defaults = {
+                    -- ...
+                },
+                pickers = {
+                    find_files = {
+                        -- theme = "dropdown",
+                    },
+                },
+                extensions = {
+                    -- ...
+                },
+            })
         end,
     },
 }

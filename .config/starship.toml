@@ -55,6 +55,7 @@ symbol = " "
 ssh_symbol = " "
 
 [java]
+style = "bold red"
 symbol = " "
 
 [julia]
