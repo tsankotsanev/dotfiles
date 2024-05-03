@@ -539,47 +539,47 @@ mouse = [
 dgroups_key_binder = None
 dgroups_app_rules = []
 
-# ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
-# BEGIN
 
-#########################################################
-################ assgin apps to groups ##################
-#########################################################
-# @hook.subscribe.client_new
-# def assign_app_group(client):
-#     d = {}
-#     #####################################################################################
-#     ### Use xprop fo find  the value of WM_CLASS(STRING) -> First field is sufficient ###
-#     #####################################################################################
-#     d[group_names[0]] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser",
-#               "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
-#     d[group_names[1]] = [ "Atom", "Subl", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord",
-#                "atom", "subl", "geany", "brackets", "code-oss", "code", "telegramDesktop", "discord", ]
-#     d[group_names[2]] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
-#               "inkscape", "nomacs", "ristretto", "nitrogen", "feh", ]
-#     d[group_names[3]] = ["Gimp", "gimp" ]
-#     d[group_names[4]] = ["Meld", "meld", "org.gnome.meld" "org.gnome.Meld" ]
-#     d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
-#     d[group_names[6]] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
-#               "virtualbox manager", "virtualbox machine", "vmplayer", ]
-#     d[group_names[7]] = ["Thunar", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
-#               "thunar", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
-#     d[group_names[8]] = ["Evolution", "Geary", "Mail", "Thunderbird",
-#               "evolution", "geary", "mail", "thunderbird" ]
-#     d[group_names[9]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
-#               "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
-#     ######################################################################################
-#
-# wm_class = client.window.get_wm_class()[0]
-#
-#     for i in range(len(d)):
-#         if wm_class in list(d.values())[i]:
-#             group = list(d.keys())[i]
-#             client.togroup(group)
-#             client.group.cmd_toscreen(toggle=False)
+@hook.subscribe.client_new
+def app_default_group(client):
+    group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
-# END
-# ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+    applications_by_group = [
+        [terminal],  # 1
+        [
+            "Firefox",
+            "Chromium",
+            "Google-chrome",
+            "Brave",
+            "Brave-browser",
+            "firefox",
+            "chromium",
+            "google-chrome",
+            "brave",
+            "brave-browser",
+        ],  # 2
+        [],  # 3
+        [],  # 4
+        [],  # 5
+        [],  # 6
+        [],  # 7
+        [],  # 8
+        ["Spotify", "spotify"],  # 9
+        ["discord", "Discord"],  # 0
+    ]
+
+    d = {
+        group_names[i]: applications_by_group[i]
+        for i in range(len(group_names))
+    }
+
+    wm_class = client.window.get_wm_class()[0]
+
+    for group, apps in d.items():
+        if wm_class in apps:
+            client.togroup(group)
+            client.group.cmd_to_screen(toggle=False)
+            break
 
 
 main = None

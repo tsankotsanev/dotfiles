@@ -40,8 +40,8 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 
 # starting user applications at boot time
 run volumeicon &
-# run discord &
+run discord &
+run spotify &
+run alacritty &
 nitrogen --restore &
 run caffeine -a &
-# run spotify &
-# run telegram-desktop &
