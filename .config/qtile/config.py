@@ -545,7 +545,7 @@ def app_default_group(client):
     group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
     applications_by_group = [
-        [terminal],  # 1
+        [],  # 1
         [
             "Firefox",
             "Chromium",
