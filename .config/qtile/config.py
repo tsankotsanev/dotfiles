@@ -550,13 +550,13 @@ def app_default_group(client):
             "Firefox",
             "Chromium",
             "Google-chrome",
-            "Brave",
-            "Brave-browser",
+            # "Brave",
+            # "Brave-browser",
             "firefox",
             "chromium",
             "google-chrome",
-            "brave",
-            "brave-browser",
+            # "brave",
+            # "brave-browser",
         ],  # 2
         [],  # 3
         [],  # 4
