@@ -9,5 +9,5 @@ return {
     -- { "nvim-lualine/lualine.nvim", enabled = false },
     { "rcarriga/nvim-notify", enabled = false },
     -- { "folke/noice.nvim", enabled = false },
-    { "echasnovski/mini.indentscope", enabled = false },
+    -- { "echasnovski/mini.indentscope", enabled = false },
 }
