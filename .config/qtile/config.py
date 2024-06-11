@@ -547,14 +547,14 @@ def app_default_group(client):
     applications_by_group = [
         [],  # 1
         [
-            "Firefox",
-            "Chromium",
-            "Google-chrome",
+            # "Firefox",
+            # "Chromium",
+            # "Google-chrome",
             # "Brave",
             # "Brave-browser",
-            "firefox",
-            "chromium",
-            "google-chrome",
+            # "firefox",
+            # "chromium",
+            # "google-chrome",
             # "brave",
             # "brave-browser",
         ],  # 2
