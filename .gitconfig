@@ -30,3 +30,6 @@
 	prompt = false
 [credential]
 	helper = store
+[user]
+	name = Tsanko Tsanev
+	email = tsanko.tsanev.business@gmail.com

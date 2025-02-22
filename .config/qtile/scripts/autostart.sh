@@ -1,9 +1,9 @@
 #!/bin/bash
 
 function run {
-	if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null; then
-		$@ &
-	fi
+    if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null; then
+        $@ &
+    fi
 }
 
 # nightlight
@@ -11,11 +11,11 @@ redshift -P -O 2500
 
 # set monitor resolution to and refresh rate
 if xrandr | grep "1366x768"; then
-	xrandr -s 1366x768 || echo "Cannot set 1366x768 resolution."
+    xrandr -s 1366x768 || echo "Cannot set 1366x768 resolution."
 elif xrandr | grep "1920x1080"; then
-	xrandr --output HDMI-0 --mode 1920x1080 --rate 240 || echo "Cannot set 1920x1080 resolution."
+    xrandr --output HDMI-0 --mode 1920x1080 --rate 240 || echo "Cannot set 1920x1080 resolution."
 else
-	echo "Could not set a resolution."
+    echo "Could not set a resolution."
 fi
 
 # mouse sensitivity
@@ -40,7 +40,7 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 
 # starting user applications at boot time
 run volumeicon &
-# run discord &
+run discord &
 run spotify &
 run alacritty &
 nitrogen --restore &

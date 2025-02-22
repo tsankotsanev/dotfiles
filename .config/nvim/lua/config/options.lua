@@ -12,3 +12,4 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.scrolloff = 8
 vim.opt.cursorline = true
+vim.g.snacks_animate = false

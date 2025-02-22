@@ -16,7 +16,7 @@ set -gx PATH /home/whitez/.bin $PATH
 set -gx PATH /home/whitez/Scripts/ $PATH
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
-set -gx BROWSER brave
+set -gx BROWSER google-chrome-stable
 
 ### Aliases ###
 
@@ -27,14 +27,11 @@ alias weather "curl wttr.in"
 alias vim nvim
 alias g git
 
-# reload configs
-alias .fish ". ~/.config/fish/config.fish"
-
 # replace ls with exa
 alias ls "exa -lh --icons"
 alias la "ll -a"
 alias l. "exa -a | grep -E '^\.'"
-alias lt "ls --tree --level=2 --long --git"
+alias lt "exa --tree --level=2 --long --icons --git"
 
 # ip check
 alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
@@ -121,8 +118,3 @@ end
 
 # initialize starship prompt
 starship init fish | .
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/whitez/Downloads/google-cloud-sdk/path.fish.inc' ]
-    . '/home/whitez/Downloads/google-cloud-sdk/path.fish.inc'
-end

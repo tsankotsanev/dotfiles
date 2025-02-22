@@ -1,9 +1,8 @@
 import os
-import socket
 import subprocess
 from libqtile import layout, bar, widget, hook
 from libqtile.config import Drag, Group, Key, Match, Screen
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 
 
 mod = "mod4"
@@ -132,7 +131,7 @@ def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
     if i != 0:
         group = qtile.screens[i - 1].group.name
         qtile.current_window.togroup(group, switch_group=switch_group)
-        if switch_screen == True:
+        if switch_screen:
             qtile.cmd_to_screen(i - 1)
 
 
@@ -141,7 +140,7 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
     if i + 1 != len(qtile.screens):
         group = qtile.screens[i + 1].group.name
         qtile.current_window.togroup(group, switch_group=switch_group)
-        if switch_screen == True:
+        if switch_screen:
             qtile.cmd_to_screen(i + 1)
 
 
@@ -174,18 +173,6 @@ group_names = [
     "9",
     "0",
 ]
-# group_labels = [
-#     "",
-#     "",
-#     "",
-#     "",
-#     "",
-#     "",
-#     "",
-#     "",
-#     "🛌",
-#     "🔁",
-# ]
 group_labels = [
     "1",
     "2",
@@ -241,8 +228,8 @@ for i in groups:
 
 def init_layout_theme():
     return {
-        "margin": 0,
-        "border_width": 2,
+        "margin": 10,
+        "border_width": 0,
         "border_focus": "#4B244B",
         "border_normal": "#2C242C",
     }
@@ -300,7 +287,6 @@ text_size = 13
 
 
 def init_widgets_list():
-    prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
         widget.Sep(
             linewidth=0, padding=6, foreground=colors[2], background=colors[1]
