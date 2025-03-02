@@ -1,13 +1,18 @@
-# dotfiles
+# Dotfiles
 
-## Installation
+## Setup
+
+> [!CAUTION]
+> Select your prefered branch on the second line of the command.
 
 ```sh
-git clone --separate-git-dir=$HOME/.files https://github.com/tsankotsanev/dotfiles.git $HOME/dotfiles-tmp
-rsync --recursive --verbose --exclude '.git' $HOME/dotfiles-tmp/ $HOME/
-rm --recursive $HOME/dotfiles-tmp
-dot config status.showUntrackedFiles no
+alias dot "git --git-dir=$HOME/.files/ --work-tree=$HOME"
+git clone --separate-git-dir=$HOME/.files --branch master git@github.com:tsankotsanev/dotfiles_private.git $HOME/dotpvt-tmp
+rsync --recursive --verbose --exclude '.git' $HOME/dot-tmp/ $HOME/
+rm --recursive $HOME/dot-tmp
+git --git-dir=$HOME/.files --work-tree=$HOME config status.showUntrackedFiles no
 ```
+
 
 ## Usage
 
