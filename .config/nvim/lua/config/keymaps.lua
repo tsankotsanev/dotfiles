@@ -3,7 +3,8 @@
 -- Add any additional keymaps here
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Preview Directory" })
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Preview Directory" })
+vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "Open Oil File Explorer" })
 
 -- keep cursor in the middle while scrolling/searching
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
