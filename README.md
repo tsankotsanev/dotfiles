@@ -3,12 +3,10 @@
 ## Installation
 
 ```sh
-dot remote add origin git@github.com:tsankotsanev/dotfiles.git
-git clone --separate-git-dir=$HOME/.files https://github.com/tsankotsanev/dotfiles.git dotfiles-tmp
-rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
-rm --recursive dotfiles-tmp
+git clone --separate-git-dir=$HOME/.files https://github.com/tsankotsanev/dotfiles.git $HOME/dotfiles-tmp
+rsync --recursive --verbose --exclude '.git' $HOME/dotfiles-tmp/ $HOME/
+rm --recursive $HOME/dotfiles-tmp
 dot config status.showUntrackedFiles no
-dot remote set-url origin git@github.com:tsankotsanev/dotfiles.git
 ```
 
 ## Usage
