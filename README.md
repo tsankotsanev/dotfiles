@@ -2,9 +2,6 @@
 
 ## Setup
 
-> [!CAUTION]
-> Select your prefered branch on the second line of the command.
-
 ```sh
 alias dot "git --git-dir=$HOME/.files/ --work-tree=$HOME"
 git clone --separate-git-dir=$HOME/.files --branch master git@github.com:tsankotsanev/dotfiles_private.git $HOME/dotpvt-tmp
