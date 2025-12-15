@@ -1,5 +1,5 @@
 local custom_catppuccin = require("lualine.themes.catppuccin")
-custom_catppuccin.normal.c.bg = "#1e1e2e"
+custom_catppuccin.normal.c.bg = "#1e2030"
 
 return {
     "nvim-lualine/lualine.nvim",

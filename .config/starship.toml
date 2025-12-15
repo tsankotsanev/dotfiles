@@ -151,5 +151,5 @@ disabled = true
 # format = 'on [$symbol$account(@$domain) (\($project\))]($style) '
 # [gcloud.project_aliases]
 # very-long-project-name = 'vlpn'
-# [gcloud]
-# disabled = true
+[gcloud]
+disabled = true

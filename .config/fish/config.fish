@@ -8,15 +8,17 @@ if [ -e ~/.config/fish/config_private.fish ]
 end
 
 ### Set ###
-fish_config theme choose "Rosé Pine"
+#fish_config theme save "Catppuccin Mocha"
 
 set fish_greeting
 
 set -gx PATH /home/whitez/.bin $PATH
 set -gx PATH /home/whitez/Scripts/ $PATH
+set -gx PATH /Users/tsanko/.cargo/bin $PATH
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
 set -gx BROWSER google-chrome-stable
+set -gx DOTNET_ROOT /usr/local/share/dotnet
 
 ### Aliases ###
 
@@ -65,7 +67,6 @@ alias vtmux "$EDITOR ~/.tmux.conf"
 alias vbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
 alias vstarship "$EDITOR ~/.config/starship.toml"
 
-
 ### Functions ###
 
 function ex --description "Extractor for all kinds of archives."
@@ -107,7 +108,6 @@ function ex --description "Extractor for all kinds of archives."
     end
 end
 
-
 function sudo --description "Replacement for Bash 'sudo !!' command to run last command using sudo."
     if test "$argv" = !!
         eval command sudo $history[1]
@@ -116,5 +116,19 @@ function sudo --description "Replacement for Bash 'sudo !!' command to run last 
     end
 end
 
+function hist
+    set -l cmd (history | fzf --no-sort)
+    if test -n "$cmd"
+        commandline -- $cmd
+    end
+end
+
 # initialize starship prompt
 starship init fish | .
+
+# Added by Windsurf
+fish_add_path /Users/tsanko/.codeium/windsurf/bin
+
+# opencode
+fish_add_path /Users/tsanko/.opencode/bin
+set -gx PATH $HOME/.local/bin $PATH
