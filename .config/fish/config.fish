@@ -8,7 +8,7 @@ if [ -e ~/.config/fish/config_private.fish ]
 end
 
 ### Set ###
-fish_config theme choose "Rosé Pine"
+# fish_config theme choose "Rosé Pine"
 
 set fish_greeting
 
@@ -26,6 +26,7 @@ alias weather "curl wttr.in"
 # shorten
 alias vim nvim
 alias g git
+alias oc opencode
 
 # replace ls with exa
 alias ls "exa -lh --icons"
@@ -64,7 +65,6 @@ alias vfishpvt "$EDITOR ~/.config/fish/config_private.fish"
 alias vtmux "$EDITOR ~/.tmux.conf"
 alias vbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
 alias vstarship "$EDITOR ~/.config/starship.toml"
-
 
 ### Functions ###
 
@@ -107,7 +107,6 @@ function ex --description "Extractor for all kinds of archives."
     end
 end
 
-
 function sudo --description "Replacement for Bash 'sudo !!' command to run last command using sudo."
     if test "$argv" = !!
         eval command sudo $history[1]
@@ -118,3 +117,11 @@ end
 
 # initialize starship prompt
 starship init fish | .
+
+# opencode
+fish_add_path /root/.opencode/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/root/google-cloud-sdk/path.fish.inc' ]
+    . '/root/google-cloud-sdk/path.fish.inc'
+end

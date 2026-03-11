@@ -25,7 +25,7 @@ return {
 
         local opts = {
             options = {
-                theme = custom_catppuccin,
+                theme = onedark,
                 globalstatus = vim.o.laststatus == 3,
                 disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
             },

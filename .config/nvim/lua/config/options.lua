@@ -11,5 +11,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.scrolloff = 8
-vim.opt.cursorline = false
+vim.opt.cursorline = true
+vim.opt.wrap = true
 vim.g.snacks_animate = false
