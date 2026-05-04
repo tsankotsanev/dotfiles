@@ -17,9 +17,6 @@ fish_add_path "$HOME/.bin"
 fish_add_path "$HOME/Scripts"
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
-if not set -q BROWSER
-    set -gx BROWSER google-chrome-stable
-end
 
 ### Aliases ###
 
@@ -31,39 +28,21 @@ alias vim nvim
 alias g git
 alias oc opencode
 
-# replace ls with exa
-alias ls "exa -lh --icons"
-alias la "ll -a"
-alias l. "exa -a | grep -E '^\.'"
-alias lt "exa --tree --level=2 --long --icons --git"
+# replace ls with eza
+alias ls "eza -lh --icons"
+alias la "eza -lha --icons"
+alias l. "eza -a | grep -E '^\.'"
+alias lt "eza --tree --level=2 --long --icons --git"
 
 # ip check
 alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
-
-# set wallpaper
-alias nitrogen "nitrogen ~/Wallpapers/"
-
-# redshift
-alias day "redshift -P -O 5600 > /dev/null && echo 'Redshift set to daytime.'"
-alias night "redshift -P -O 3400 > /dev/null && echo 'Redshift set to night-time.'"
-
-# system
-alias update "sudo pacman -Syyu --noconfirm"
-alias sr "sudo reboot"
-alias ss "sudo shutdown now"
 
 # dotfiles repo
 alias dot "git -C $HOME/dotfiles"
 
 # config files
-alias valacritty "$EDITOR ~/.config/alacritty/alacritty.toml"
-alias vqtile "$EDITOR ~/.config/qtile/config.py"
-alias vautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
-alias vpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
-alias vbash "$EDITOR ~/.bashrc"
 alias vfish "$EDITOR ~/.config/fish/config.fish"
 alias vtmux "$EDITOR ~/.tmux.conf"
-alias vbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
 alias vstarship "$EDITOR ~/.config/starship.toml"
 
 ### Functions ###
