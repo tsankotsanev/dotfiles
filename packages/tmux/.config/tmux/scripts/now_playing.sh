@@ -1,7 +1,15 @@
 #!/bin/bash
 # Now Playing for tmux status bar (macOS)
-# Shows current media via nowplaying-cli
+# Shows current Spotify track only when playing
 # Default: "♫ —" when nothing is playing
+
+# Check if Spotify is running and playing
+state=$(osascript -e 'tell application "Spotify" to get player state' 2>/dev/null)
+
+if [ "$state" != "playing" ]; then
+  echo "♫ —"
+  exit 0
+fi
 
 np=$(nowplaying-cli get title 2>/dev/null)
 
