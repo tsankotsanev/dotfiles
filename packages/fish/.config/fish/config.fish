@@ -1,45 +1,47 @@
 # source private configs if exists
 if [ -e ~/.config/fish/config_work.fish ]
-    and source ~/.config/fish/config_work.fish
+    and . ~/.config/fish/config_work.fish
 end
 
 if [ -e ~/.config/fish/config_private.fish ]
-    and source ~/.config/fish/config_private.fish
+    and . ~/.config/fish/config_private.fish
 end
 
 ### Set ###
-fish_config theme choose "Rosé Pine"
+# fish_config theme choose "Rosé Pine"
 
 set fish_greeting
-set -U FZF_LEGACY_KEYBINDINGS 0
 
-set -gx PATH /home/whitez/.bin $PATH
-set -gx PATH /home/whitez/Scripts/ $PATH
+fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.bin"
+fish_add_path "$HOME/Scripts"
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
-set -gx BROWSER brave
-
+if not set -q BROWSER
+    set -gx BROWSER google-chrome-stable
+end
 
 ### Aliases ###
 
-# simplify
+# fun
+alias weather "curl wttr.in"
+
+# shorten
 alias vim nvim
 alias g git
-
-# reload configs
-alias rfish ". .config/fish/config.fish"
+alias oc opencode
 
 # replace ls with exa
 alias ls "exa -lh --icons"
 alias la "ll -a"
 alias l. "exa -a | grep -E '^\.'"
-alias lt "ls --tree --level=2 --long --git"
+alias lt "exa --tree --level=2 --long --icons --git"
 
-# ip
+# ip check
 alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 
-# set wallpapers
-alias nitrogen "nitrogen Wallpapers/"
+# set wallpaper
+alias nitrogen "nitrogen ~/Wallpapers/"
 
 # redshift
 alias day "redshift -P -O 5600 > /dev/null && echo 'Redshift set to daytime.'"
@@ -50,23 +52,19 @@ alias update "sudo pacman -Syyu --noconfirm"
 alias sr "sudo reboot"
 alias ss "sudo shutdown now"
 
-# bare repos for dotfilles
-alias conf "/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME"
-alias confpvt="git --git-dir=$HOME/.confpvt/ --work-tree=$HOME"
+# dotfiles repo
+alias dot "git -C $HOME/dotfiles"
 
 # config files
-alias valacritty "vim ~/.config/alacritty/alacritty.yml"
-alias vqtile "vim ~/.config/qtile/config.py"
-alias vautostart "vim ~/.config/qtile/scripts/autostart.sh"
-alias vpicom "vim ~/.config/qtile/scripts/picom.conf"
-alias vbash "vim ~/.bashrc"
-alias vfish "vim ~/.config/fish/config.fish"
-alias vfishwork "vim ~/.config/fish/config_work.fish"
-alias vfishpvt "vim ~/.config/fish/config_private.fish"
-alias vtmux "vim ~/.tmux.conf"
-alias vbinds "vim ~/.config/qtile/sxhkd/sxhkdrc"
-alias vstarship "vim ~/.config/starship.toml"
-
+alias valacritty "$EDITOR ~/.config/alacritty/alacritty.toml"
+alias vqtile "$EDITOR ~/.config/qtile/config.py"
+alias vautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
+alias vpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
+alias vbash "$EDITOR ~/.bashrc"
+alias vfish "$EDITOR ~/.config/fish/config.fish"
+alias vtmux "$EDITOR ~/.tmux.conf"
+alias vbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
+alias vstarship "$EDITOR ~/.config/starship.toml"
 
 ### Functions ###
 
@@ -109,7 +107,6 @@ function ex --description "Extractor for all kinds of archives."
     end
 end
 
-
 function sudo --description "Replacement for Bash 'sudo !!' command to run last command using sudo."
     if test "$argv" = !!
         eval command sudo $history[1]
@@ -120,3 +117,11 @@ end
 
 # initialize starship prompt
 starship init fish | .
+
+# opencode
+fish_add_path "$HOME/.opencode/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]
+    . "$HOME/google-cloud-sdk/path.fish.inc"
+end

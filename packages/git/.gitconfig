@@ -8,7 +8,7 @@
     pl = pull
     l = log --pretty=format:'%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%Creset' --graph --date=relative --decorate --all
     br = branch
-    open = "!hub browse"
+    open = "!gh repo view --web"
 
 [http]
     sslbackend = openssl
@@ -16,7 +16,7 @@
 
 [core]
     editor = nvim
-    excludesfile = /home/whitez/.gitignore
+    excludesfile = ~/.gitignore
 [color]
     status = auto
     diff = auto
@@ -28,8 +28,6 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
-[credential]
-	helper = store
 [user]
 	name = Tsanko Tsanev
 	email = tsanko.tsanev.business@gmail.com
