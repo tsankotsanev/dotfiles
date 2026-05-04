@@ -18,6 +18,7 @@ packages=(
   fish
   nvim
   alacritty
+  ghostty
   starship
   qtile
 )

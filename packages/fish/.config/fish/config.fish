@@ -122,6 +122,6 @@ starship init fish | .
 fish_add_path "$HOME/.opencode/bin"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]
-    . "$HOME/google-cloud-sdk/path.fish.inc"
+if [ -f "/opt/homebrew/share/google-cloud-sdk/path.fish.inc" ]
+    . "/opt/homebrew/share/google-cloud-sdk/path.fish.inc"
 end

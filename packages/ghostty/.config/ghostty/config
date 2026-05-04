@@ -1,0 +1,34 @@
+# Treat Option key as Alt for terminal key sequences
+# This makes Alt+hjkl work in tmux-tilish and other Alt-based keybinds
+macos-option-as-alt = true
+
+# ── Aura Theme (matches OpenCode) ──
+# Background
+background = #0f0f0f
+foreground = #edecee
+
+# Cursor
+cursor-color = #a277ff
+cursor-text = #0f0f0f
+
+# Selection
+selection-background = #2a2040
+selection-foreground = #edecee
+
+# ANSI colors
+palette = 0=#0f0f0f
+palette = 1=#ff6767
+palette = 2=#61ffca
+palette = 3=#ffca85
+palette = 4=#a277ff
+palette = 5=#f694ff
+palette = 6=#82e2ff
+palette = 7=#edecee
+palette = 8=#6d6d6d
+palette = 9=#ff6767
+palette = 10=#61ffca
+palette = 11=#ffca85
+palette = 12=#a277ff
+palette = 13=#f694ff
+palette = 14=#82e2ff
+palette = 15=#ffffff
