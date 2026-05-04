@@ -30,4 +30,10 @@
 	prompt = false
 [user]
 	name = Tsanko Tsanev
-	email = tsanko.tsanev.business@gmail.com
+	email = tsanko@wider.io
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
