@@ -1,6 +1,6 @@
 #!/bin/bash
 # CPU and MEM usage for tmux status bar
-# Output: "CPU 12% MEM 45%"
+# Output: "󰍛 12% 󰘚 45%"
 
 # CPU: average across all cores (0-100%)
 ncores=$(sysctl -n hw.ncpu 2>/dev/null || echo 1)
@@ -20,4 +20,4 @@ if [ -z "$mem_pct" ] || [ "$mem_pct" = "0" ]; then
   mem_pct=$(memory_pressure 2>/dev/null | awk '/System-wide memory free percentage/ {printf "%.0f", 100-$NF}' || echo "?")
 fi
 
-echo "CPU ${cpu_pct}% MEM ${mem_pct}%"
+echo "󰍛 ${cpu_pct}% 󰘚 ${mem_pct}%"
