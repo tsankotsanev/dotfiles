@@ -1,27 +1,34 @@
 [colors.bright]
-black = "#545454"
-blue = "#94bff3"
-cyan = "#93e0e3"
-green = "#8ae234"
-magenta = "#b294bb"
-red = "#fc5454"
-white = "#ffffff"
-yellow = "#fce94f"
+black = "#585b70"
+blue = "#89b4fa"
+cyan = "#94e2d5"
+green = "#a6e3a1"
+magenta = "#f5c2e7"
+red = "#f38ba8"
+white = "#a6adc8"
+yellow = "#f9e2af"
+
+[colors.cursor]
+cursor = "#f5e0dc"
+text = "#1e1e2e"
 
 [colors.normal]
-black = "#3f3f3f"
-blue = "#94bff3"
-cyan = "#06989a"
-green = "#4e9a06"
-magenta = "#85678f"
-red = "#cc0000"
-white = "#dcdccc"
-yellow = "#c4a000"
+black = "#45475a"
+blue = "#89b4fa"
+cyan = "#94e2d5"
+green = "#a6e3a1"
+magenta = "#f5c2e7"
+red = "#f38ba8"
+white = "#bac2de"
+yellow = "#f9e2af"
 
 [colors.primary]
 background = "#1e1e2e"
-# background = "#000000"
-foreground = "#abb2bf"
+foreground = "#cdd6f4"
+
+[colors.selection]
+background = "#585b70"
+text = "#cdd6f4"
 
 [env]
 TERM = "xterm-256color"
