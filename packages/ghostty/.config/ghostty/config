@@ -2,7 +2,11 @@
 # This makes Alt+hjkl work in tmux-tilish and other Alt-based keybinds
 macos-option-as-alt = true
 
-# ── Catppuccin Mocha Theme ──
+# Font
+font-family = "FiraCode Nerd Font Mono"
+font-size = 18
+
+# ── Catppuccin Mocha Theme ──œ
 # Background
 background = #1e1e2e
 foreground = #cdd6f4

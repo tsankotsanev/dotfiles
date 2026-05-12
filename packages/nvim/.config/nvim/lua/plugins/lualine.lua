@@ -8,7 +8,10 @@ return {
 
       -- Clock is already shown in tmux.
       opts.sections = opts.sections or {}
-      opts.sections.lualine_z = {}
+      opts.sections.lualine_z = {
+        -- Show opencode status (idle / thinking / model name) in the statusline
+        { function() return require("opencode").statusline() end },
+      }
     end,
   },
 }
