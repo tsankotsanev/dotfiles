@@ -26,7 +26,6 @@ alias weather "curl wttr.in"
 # shorten
 alias vim nvim
 alias g git
-alias oc opencode
 
 # replace ls with eza
 alias ls "eza -lh --icons"
@@ -104,3 +103,7 @@ fish_add_path "$HOME/.opencode/bin"
 if [ -f "/opt/homebrew/share/google-cloud-sdk/path.fish.inc" ]
     . "/opt/homebrew/share/google-cloud-sdk/path.fish.inc"
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
