@@ -1,0 +1,71 @@
+# Hunk config — One Dark Pro theme matching Ghostty terminal
+# Uses transparent background so terminal's #282c34 shows through,
+# with custom diff colors tuned for visibility on that background.
+
+[view]
+theme = "custom"
+
+[custom_theme]
+base = "catppuccin-mocha"
+
+# Let terminal background (#282c34) show through
+background = "#282c34"
+panel = "#21252b"
+panelAlt = "#1e2228"
+border = "#3e4451"
+
+# Text colors (One Dark palette)
+accent = "#61afef"
+accentMuted = "#3e4451"
+text = "#abb2bf"
+muted = "#5c6370"
+
+# Diff colors — tuned for visibility on #282c34
+addedBg = "#1e3a1e"
+removedBg = "#3a1e1e"
+movedAddedBg = "#1e3a3a"
+movedRemovedBg = "#3a1e3a"
+contextBg = "#2c313a"
+
+addedContentBg = "#264f26"
+removedContentBg = "#6e2c2c"
+contextContentBg = "#2c313a"
+
+addedSignColor = "#98c379"
+removedSignColor = "#e06c75"
+
+# Line numbers
+lineNumberBg = "#21252b"
+lineNumberFg = "#5c6370"
+
+# Selection
+selectedHunk = "#3e4451"
+
+# Badges
+badgeAdded = "#98c379"
+badgeRemoved = "#e06c75"
+badgeNeutral = "#abb2bf"
+
+# File status
+fileNew = "#98c379"
+fileDeleted = "#e06c75"
+fileRenamed = "#e5c07b"
+fileModified = "#c678dd"
+fileUntracked = "#61afef"
+
+# Agent notes
+noteBorder = "#c678dd"
+noteBackground = "#2a2138"
+noteTitleBackground = "#352945"
+noteTitleText = "#e5c07b"
+
+[custom_theme.syntax]
+default = "#abb2bf"
+keyword = "#c678dd"
+string = "#98c379"
+comment = "#5c6370"
+number = "#d19a66"
+function = "#61afef"
+property = "#e06c75"
+type = "#e5c07b"
+punctuation = "#abb2bf"

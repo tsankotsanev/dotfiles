@@ -39,6 +39,17 @@ alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 # dotfiles repo
 alias dot "git -C $HOME/dotfiles"
 
+# hunk diff viewer — custom One Dark theme matching Ghostty terminal
+function hunk --description "Hunk diff viewer with One Dark theme"
+    # --theme is a subcommand-level flag for visual commands only
+    set -l visual_cmds diff show stash patch pager difftool
+    if contains -- $argv[1] $visual_cmds
+        command hunk $argv[1] --theme custom $argv[2..]
+    else
+        command hunk $argv
+    end
+end
+
 # config files
 alias vfish "$EDITOR ~/.config/fish/config.fish"
 alias vtmux "$EDITOR ~/.tmux.conf"

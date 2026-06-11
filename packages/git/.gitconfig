@@ -1,7 +1,7 @@
 [alias]
     st = status
     a = "!git status --short | grep '^.[^ ]' | grep -v '^A' | awk '{print $2}' | fzf --multi --preview 'git diff --color=always {}' --bind K:preview-up,J:preview-down | xargs git add ; git status --short"
-    d = diff
+    d = "!hunk diff --theme custom"
     cm = commit
     co = checkout
     ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
@@ -25,9 +25,11 @@
     grep = auto
     ui = auto
 [diff]
-	tool = vimdiff
+	tool = hunk
 [difftool]
 	prompt = false
+[difftool "hunk"]
+	cmd = hunk difftool --theme custom \"$LOCAL\" \"$REMOTE\"
 [user]
 	name = Tsanko Tsanev
 	email = tsanko@wider.io
