@@ -1,14 +1,14 @@
 [alias]
     st = status
     a = "!git status --short | grep '^.[^ ]' | grep -v '^A' | awk '{print $2}' | fzf --multi --preview 'git diff --color=always {}' --bind K:preview-up,J:preview-down | xargs git add ; git status --short"
-    d = "!hunk diff --theme custom"
+    d = diff
     cm = commit
     co = checkout
     ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
     pl = pull
     l = log --pretty=format:'%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%Creset' --graph --date=relative --decorate --all
     br = branch
-    open = "!gh repo view --web"
+    open = "!hub browse"
 
 [http]
     sslbackend = openssl
@@ -16,7 +16,7 @@
 
 [core]
     editor = nvim
-    excludesfile = ~/.gitignore
+    excludesfile = /home/whitez/.gitignore
 [color]
     status = auto
     diff = auto
@@ -25,17 +25,11 @@
     grep = auto
     ui = auto
 [diff]
-	tool = hunk
+	tool = vimdiff
 [difftool]
 	prompt = false
-[difftool "hunk"]
-	cmd = hunk difftool --theme custom \"$LOCAL\" \"$REMOTE\"
+[credential]
+	helper = store
 [user]
 	name = Tsanko Tsanev
-	email = tsanko@wider.io
-[credential "https://github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
+	email = tsanko.tsanev.business@gmail.com
