@@ -12,6 +12,8 @@ function oc-tmux --description "Start or attach to a persistent OpenCode tmux se
         tmux attach -t $session_name
     else
         echo "Creating new tmux session '$session_name' with OpenCode..."
-        tmux new-session -s $session_name -n opencode "opencode; exec fish"
+        # Launch via the `oc` function so the session attaches to the shared
+        # headless server (live phone/Tailscale sync), not a private server.
+        tmux new-session -s $session_name -n opencode "fish -lc oc; exec fish"
     end
 end
