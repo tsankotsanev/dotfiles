@@ -28,3 +28,4 @@ node_modules/
 # Neovim local state should not live in dotfiles
 .local/share/nvim/
 .local/state/nvim/
+.gitconfig-work
