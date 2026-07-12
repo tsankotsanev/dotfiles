@@ -12,11 +12,11 @@ end
 
 set fish_greeting
 
-fish_add_path "$HOME/.local/bin"
-fish_add_path "$HOME/.bin"
-fish_add_path "$HOME/Scripts"
+set -gx PATH /home/whitez/.bin $PATH
+set -gx PATH /home/whitez/Scripts/ $PATH
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
+set -gx BROWSER google-chrome-stable
 
 ### Aliases ###
 
@@ -26,33 +26,44 @@ alias weather "curl wttr.in"
 # shorten
 alias vim nvim
 alias g git
+alias oc opencode
 
-# replace ls with eza
-alias ls "eza -lh --icons"
-alias la "eza -lha --icons"
-alias l. "eza -a | grep -E '^\.'"
-alias lt "eza --tree --level=2 --long --icons --git"
+# replace ls with exa
+alias ls "exa -lh --icons"
+alias la "ll -a"
+alias l. "exa -a | grep -E '^\.'"
+alias lt "exa --tree --level=2 --long --icons --git"
 
 # ip check
 alias whatsmyip "curl --silent ifconfig.me | awk '{print $1}'"
 
-# dotfiles repo
-alias dot "git -C $HOME/dotfiles"
+# set wallpaper
+alias nitrogen "nitrogen ~/Wallpapers/"
 
-# hunk diff viewer — custom One Dark theme matching Ghostty terminal
-function hunk --description "Hunk diff viewer with One Dark theme"
-    # --theme is a subcommand-level flag for visual commands only
-    set -l visual_cmds diff show stash patch pager difftool
-    if contains -- $argv[1] $visual_cmds
-        command hunk $argv[1] --theme custom $argv[2..]
-    else
-        command hunk $argv
-    end
-end
+# redshift
+alias day "redshift -P -O 5600 > /dev/null && echo 'Redshift set to daytime.'"
+alias night "redshift -P -O 3400 > /dev/null && echo 'Redshift set to night-time.'"
+
+# system
+alias update "sudo pacman -Syyu --noconfirm"
+alias sr "sudo reboot"
+alias ss "sudo shutdown now"
+
+# bare repos for dotfilles
+alias dot "git --git-dir=$HOME/.files/ --work-tree=$HOME"
+alias dotpvt "git --git-dir=$HOME/.filespvt/ --work-tree=$HOME"
 
 # config files
+alias valacritty "$EDITOR ~/.config/alacritty/alacritty.toml"
+alias vqtile "$EDITOR ~/.config/qtile/config.py"
+alias vautostart "$EDITOR ~/.config/qtile/scripts/autostart.sh"
+alias vpicom "$EDITOR ~/.config/qtile/scripts/picom.conf"
+alias vbash "$EDITOR ~/.bashrc"
 alias vfish "$EDITOR ~/.config/fish/config.fish"
+alias vfishwork "$EDITOR ~/.config/fish/config_work.fish"
+alias vfishpvt "$EDITOR ~/.config/fish/config_private.fish"
 alias vtmux "$EDITOR ~/.tmux.conf"
+alias vbinds "$EDITOR ~/.config/qtile/sxhkd/sxhkdrc"
 alias vstarship "$EDITOR ~/.config/starship.toml"
 
 ### Functions ###
@@ -108,13 +119,9 @@ end
 starship init fish | .
 
 # opencode
-fish_add_path "$HOME/.opencode/bin"
+fish_add_path /root/.opencode/bin
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f "/opt/homebrew/share/google-cloud-sdk/path.fish.inc" ]
-    . "/opt/homebrew/share/google-cloud-sdk/path.fish.inc"
+if [ -f '/root/google-cloud-sdk/path.fish.inc' ]
+    . '/root/google-cloud-sdk/path.fish.inc'
 end
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH

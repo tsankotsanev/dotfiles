@@ -1,7 +1,6 @@
 [alias]
     st = status
     a = "!git status --short | grep '^.[^ ]' | grep -v '^A' | awk '{print $2}' | fzf --multi --preview 'git diff --color=always {}' --bind K:preview-up,J:preview-down | xargs git add ; git status --short"
-    d = "!hunk diff --theme custom"
     cm = commit
     co = checkout
     ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
@@ -17,6 +16,7 @@
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
+
 [color]
     status = auto
     diff = auto
@@ -24,20 +24,18 @@
     interactive = auto
     grep = auto
     ui = auto
-[diff]
-	tool = hunk
+
 [difftool]
-	prompt = false
-[difftool "hunk"]
-	cmd = hunk difftool --theme custom \"$LOCAL\" \"$REMOTE\"
+    prompt = false
+
 [user]
-	name = Tsanko Tsanev
-	email = tsanko.tsanev.business@gmail.com
-[credential "https://github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
+    name = Tsanko Tsanev
+    email = tsanko.tsanev.business@gmail.com
+
 [includeIf "gitdir:~/Projects/"]
-	path = ~/.gitconfig-work
+    path = ~/.gitconfig-work
+
+# Machine-local overrides (difftool, d alias, credential helper). Untracked.
+# Missing file is silently ignored, so this is safe on a bare machine.
+[include]
+    path = ~/.gitconfig.local
